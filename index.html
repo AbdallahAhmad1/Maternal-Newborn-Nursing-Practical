@@ -674,8 +674,6 @@ const datasets = {
     trQ: "أي مما يلي يسأل عنه في 'التاريخ التوليدي'؟",
     trO: ["تحصين التيتانوس", "تفاصيل الولادات السابقة (الجنس، الوزن)", "حالة السكن", "سن البلوغ"]
   },
-
-  // --- أسئلة جدول المتابعات (Schedule of Antenatal Visits) ---
   {
     q: "According to the schedule of antenatal visits, how often is the visit from week 4 to 28?",
     o: ["Every week", "Every 2 weeks", "A month (every month)", "Every 3 months"],
@@ -697,8 +695,6 @@ const datasets = {
     trQ: "خلال الأسابيع الأخيرة من الحمل، من الأسبوع 36 إلى 40، ما مدى تكرار زيارات ما قبل الولادة؟",
     trO: ["كل أسبوع", "كل أسبوعين", "كل شهر", "فقط عند وجود ألم"]
   },
-
-  // --- باقي أسئلة الـ MCQ (مع السؤال المضاف ليكملوا 30) ---
   {
     q: "What should the nurse ask about during the 'Present Pregnancy' assessment in the first visit?",
     o: ["Symptoms of pregnancy and if she has felt the baby move", "Her favorite hobbies", "The exact cost of delivery", "Her husband's birth date"],
@@ -846,8 +842,6 @@ const datasets = {
     trQ: "أي مما يلي يعتبر اختبارًا اختياريًا أثناء رعاية ما قبل الولادة؟",
     trO: ["اختبار الهيموجلوبين", "فصيلة الدم وعامل ريسوس", "بزل السلى لمعلومات الكروموسومات", "اختبار البول الروتيني"]
   },
-
-  // --- الـ 20 سؤال True & False ---
   {
     q: "According to the schedule, antenatal visits from week 4 to 28 are scheduled once a month.",
     o: ["True", "False"],
@@ -989,7 +983,358 @@ const datasets = {
     trO: ["صحيح", "خطأ"]
   }
   ],
-  "place2": [],
+  "place2": [
+  {
+    q: "What does the 1st maneuver (Fundal Grip) determine?",
+    o: ["Fetal lie", "Fetal attitude", "Which part of the fetus occupies the fundus", "Fetal weight"],
+    a: 2,
+    trQ: "ماذا تحدد المناورة الأولى (القبضة القمية)؟",
+    trO: ["وضعية الجنين (Fetal lie)", "انثناء الجنين", "أي جزء من الجنين يشغل قاع الرحم", "وزن الجنين"]
+  },
+  {
+    q: "If the part felt in the fundus during the 1st maneuver is small, hard, and rounded, it refers to:",
+    o: ["Breech", "Head", "Back", "Extremities"],
+    a: 1,
+    trQ: "إذا كان الجزء في القاع صغيراً وصلباً ومستديراً، فهذا يشير إلى:",
+    trO: ["المقعد (Breech)", "الرأس (Head)", "الظهر", "الأطراف"]
+  },
+  {
+    q: "What does the 2nd maneuver (Lateral Palpation) determine?",
+    o: ["Fetal lie and position to find the back", "Fetal weight", "Maternal blood pressure", "Fetal size only"],
+    a: 0,
+    trQ: "ماذا تحدد المناورة الثانية (الجس الجانبي)؟",
+    trO: ["وضع وموقع الجنين لإيجاد الظهر", "وزن الجنين", "ضغط دم الأم", "حجم الجنين فقط"]
+  },
+  {
+    q: "When is the 3rd maneuver (Pawlik's Grip) performed?",
+    o: ["At 20 weeks", "At 24 weeks", "At 9th month / 36 weeks", "During labor"],
+    a: 2,
+    trQ: "متى تجرى المناورة الثالثة (قبضة باوليك)؟",
+    trO: ["عند 20 أسبوعاً", "عند 24 أسبوعاً", "في الشهر التاسع / 36 أسبوعاً", "أثناء الولادة"]
+  },
+  {
+    q: "What does the 4th maneuver (Pelvic Palpation) determine?",
+    o: ["Fetal attitude (flexion or extension)", "Fetal lie", "Fetal heart rate", "Placenta location"],
+    a: 0,
+    trQ: "ماذا تحدد المناورة الرابعة (الجس الحوضي)؟",
+    trO: ["وضعية رأس الجنين (انثناء أو تمدد)", "وضع الجنين", "معدل ضربات قلب الجنين", "مكان المشيمة"]
+  },
+  {
+    q: "When is the abdominal exam performed specifically to assess fetal presentation?",
+    o: ["From 24 weeks", "From 36 weeks", "From 20 weeks", "From 10 weeks"],
+    a: 1,
+    trQ: "متى يتم فحص البطن لتقييم وضعية الجنين (Fetal presentation)؟",
+    trO: ["من 24 أسبوعاً", "من 36 أسبوعاً", "من 20 أسبوعاً", "من 10 أسابيع"]
+  },
+  {
+    q: "What is the main technique used during abdominal inspection?",
+    o: ["Shape and size of abdomen inspection", "Listening with a stethoscope only", "Deep palpation", "Percussion"],
+    a: 0,
+    trQ: "ما هي التقنية الرئيسية المستخدمة أثناء الفحص بالنظر (Inspection) للبطن؟",
+    trO: ["فحص شكل وحجم البطن", "الاستماع بالسماعة فقط", "الجس العميق", "القرع"]
+  },
+  {
+    q: "What is assessed during the examination of fetal movements on the maternal abdomen?",
+    o: ["Active fetal movements", "Fetal blood type", "Maternal hair growth", "Placental blood flow speed"],
+    a: 0,
+    trQ: "ما الذي يتم تقييمه أثناء فحص حركات الجنين على بطن الأم؟",
+    trO: ["حركات الجنين النشطة", "فصيلة دم الجنين", "نمو شعر الأم", "سرعة تدفق دم المشيمة"]
+  },
+  {
+    q: "Abdominal examination is performed at each antenatal appointment starting from which weeks to estimate fetal size and gestation?",
+    o: ["From 12 weeks to 16 weeks", "From 24 weeks to 36 weeks", "From 38 weeks to 40 weeks", "Immediately at week 4"],
+    a: 1,
+    trQ: "يتم إجراء فحص البطن في كل موعد لرعاية الحمل بدءاً من أي أسابيع لتقدير حجم الجنين وعمر الحمل؟",
+    trO: ["من 12 إلى 16 أسبوعاً", "من 24 إلى 36 أسبوعاً", "من 38 إلى 40 أسبوعاً", "فوراً في الأسبوع الرابع"]
+  },
+  {
+    q: "What is the primary objective of determining the location of fetal heart sound during abdominal examination?",
+    o: ["Assess fetal health", "Observe linea nigra", "Check maternal blood pressure", "Determine placental maturity"],
+    a: 0,
+    trQ: "ما هو الهدف الأساسي من تحديد مكان صوت نبضات قلب الجنين أثناء فحص البطن؟",
+    trO: ["تقييم صحة الجنين", "ملاحظة الخط الأسود", "فحص ضغط دم الأم", "تحديد نضج المشيمة"]
+  },
+  {
+    q: "When preparing a woman for abdominal examination, where should the nurse stand?",
+    o: ["At the left side of the woman", "At the right side of the woman", "At the head of the woman", "At the foot of the couch"],
+    a: 1,
+    trQ: "عند تحضير المرأة لفحص البطن، أين يجب أن تقف الممرضة؟",
+    trO: ["على الجانب الأيسر للمرأة", "على الجانب الأيمن للمرأة", "عند رأس المرأة", "عند قدم السرير"]
+  },
+  {
+    q: "During the preparation phase of abdominal examination, the nurse should instruct the woman to:",
+    o: ["Eat a heavy meal", "Empty her bladder and provide a urine sample if indicated", "Stand up and walk around the room", "Drink two liters of water immediately"],
+    a: 1,
+    trQ: "خلال مرحلة التحضير لفحص البطن، يجب على الممرضة إرشاد المرأة إلى:",
+    trO: ["تناول وجبة ثقيلة", "إفراغ مثانتها وتقديم عينة بول إذا لزم الأمر", "الوقوف والتجول في الغرفة", "شرب لترين من الماء فوراً"]
+  },
+  {
+    q: "How should the woman be positioned on the examination couch for abdominal assessment?",
+    o: ["Prone position with head down", "On her back with knees flexed and slightly separated", "Sitting upright at 90 degrees", "On her left side only"],
+    a: 1,
+    trQ: "كيف يجب وضع المرأة على سرير الفحص لتقييم البطن؟",
+    trO: ["وضع الانبطاح مع خفض الرأس", "على ظهرها مع ثني الركبتين وتباعدهما قليلاً", "الجلوس بشكل مستقيم بزاوية 90 درجة", "على جانبها الأيسر فقط"]
+  },
+  {
+    q: "If the uterus size is greater than the period of amenorrhea, which of the following could be a possible cause?",
+    o: ["I.U.G.R.", "Missed abortion", "Multiple pregnancy or Polyhydramnios", "IUFD"],
+    a: 2,
+    trQ: "إذا كان حجم الرحم أكبر من فترة انقطاع الطمث، فأي مما يلي قد يكون سبباً محتملاً؟",
+    trO: ["تأخر نمو داخل الرحم", "الإجهاض المنسي", "حمل متعدِد (توأم) أو زيادة السائل الأميوسي", "موت الجنين داخل الرحم"]
+  },
+  {
+    q: "If the uterus size is smaller than the period of amenorrhea, which condition is most likely associated with it?",
+    o: ["Polyhydramnios", "Fibroid or tumor", "Miscalculation, I.U.G.R., or IUFD", "Hydramnios"],
+    a: 2,
+    trQ: "إذا كان حجم الرحم أصغر من فترة انقطاع الطمث، فما هي الحالة الأكثر احتمالاً المرتبطة بذلك؟",
+    trO: ["زيادة السائل الأميوسي", "ورم ليفي أو ورم", "سوء حساب، تأخر نمو الجنين، أو موت الجنين داخل الرحم", "استسقاء السلى"]
+  },
+  {
+    q: "Which skin pigmentation sign of pregnancy is commonly inspected on the abdomen?",
+    o: ["Linea nigra (black line)", "Jaundice", "Cyanosis", "Vitiligo"],
+    a: 0,
+    trQ: "ما هي علامة تصبغ الجلد الخاصة بالحمل التي يتم فحصها عادة على البطن؟",
+    trO: ["الخط الأسود (Linea nigra)", "اليرقان", "ازرقاق الجلد", "البهاق"]
+  },
+  {
+    q: "Which of the following skin markings on the abdomen are referred to as striae gravidarum?",
+    o: ["Pink or silver lines caused by stretching", "Deep surgical scars", "Fungal skin patches", "Tattoo marks"],
+    a: 0,
+    trQ: "أي من العلامات الجلدية التالية على البطن تُعرف بالخطوط الحمراء أو الفضية (Striae gravidarum)؟",
+    trO: ["خطوط وردية أو فضية ناتجة عن التمدد", "ندبات جراحية عميقة", "بقع جلدية فطرية", "علامات الوشم"]
+  },
+  {
+    q: "Besides linea nigra and striae, what else might be inspected on the abdomen during examination?",
+    o: ["Fetal movements, varicose veins, or hernia", "Tattoo removal progress", "Bone fractures", "Nail infections"],
+    a: 0,
+    trQ: "إلى جانب الخط الأسود والخطوط التمددية، ماذا يمكن فحصه أيضاً على البطن أثناء الفحص؟",
+    trO: ["حركة الجنين، الدوالي، أو الفتق", "تقدم إزالة الوشم", "كسور العظام", "التهابات الأظافر"]
+  },
+  {
+    q: "What is the primary purpose of assessing Fundal Height (Fundal level)?",
+    o: ["To determine weeks of gestation", "To check maternal eye color", "To measure maternal height", "To test blood sugar"],
+    a: 0,
+    trQ: "ما هو الغرض الأساسي من تقييم ارتفاع قاع الرحم (مستوى القاع)؟",
+    trO: ["تحديد عمر الحمل", "فحص لون عين الأم", "قياس طول الأم", "فحص سكر الدم"]
+  },
+  {
+    q: "In more than 99% of pregnancies, what is the lie of the fetus?",
+    o: ["Transverse lie", "Oblique lie", "Longitudinal lie and parallel to the long axis of the mother", "Circular lie"],
+    a: 2,
+    trQ: "في أكثر من 99% من حالات الحمل، ما هي وضعية (Lie) الجنين؟",
+    trO: ["وضعية عرضية", "وضعية مائلة", "وضعية طولية وموازية للمحور الطولي للأم", "وضعية دائرية"]
+  },
+  {
+    q: "What is the normal fetal attitude described in obstetric assessment?",
+    o: ["Complete extension", "Complete flexion", "Lateral tilt", "Upward stretch"],
+    a: 1,
+    trQ: "ما هو وضع الانثناء الطبيعي للجنين (Fetal attitude) الموصوف في التقييم التوليدي؟",
+    trO: ["امتداد كامل", "انثناء كامل (Complete flexion)", "ميل جانبي", "تمدد لأعلى"]
+  },
+  {
+    q: "When evaluating fetal heart rate using a stethoscope or sonicaid, what must be done simultaneously to ensure it's the fetal heart?",
+    o: ["Feel the woman's pulse at the wrist", "Check the mother's blood pressure", "Measure the mother's temperature", "Ask the mother to hold her breath"],
+    a: 0,
+    trQ: "عند تقييم معدل ضربات قلب الجنين باستخدام السماعة أو السونيكيد، ما الذي يجب فعله في نفس الوقت للتأكد من أنه قلب الجنين؟",
+    trO: ["جس نبض الأم عند المعصم", "فحص ضغط دم الأم", "قياس درجة حرارة الأم", "طلب من الأم حبس أنفاسها"]
+  },
+  {
+    q: "At how many weeks of pregnancy can fetal heart sounds (FHS) typically be heard by sonicaid?",
+    o: ["As early as 10th week of pregnancy", "At 20 weeks", "At 35 weeks", "At 40 weeks"],
+    a: 0,
+    trQ: "في أي أسبوع من الحمل يمكن عادة سماع صوت نبضات قلب الجنين (FHS) بواسطة جهاز السونيكيد؟",
+    trO: ["في وقت مبكر من الأسبوع العاشر من الحمل", "في الأسبوع العشرين", "في الأسبوع 35", "في الأسبوع الأربعين"]
+  },
+  {
+    q: "When is fetal heart sound typically heard using a Pinard (fetal stethoscope)?",
+    o: ["After the 20th week of pregnancy", "At the 5th week", "At the 12th week", "Only during labor"],
+    a: 0,
+    trQ: "متى يتم سماع صوت نبضات قلب الجنين عادة باستخدام سماعة بينارد (Pinard stethoscope)؟",
+    trO: ["بعد الأسبوع العشرين من الحمل", "في الأسبوع الخامس", "في الأسبوع الثاني عشر", "فقط أثناء المخاض"]
+  },
+  {
+    q: "What is measured if the fundal height is measured in centimeters between 20 to 36 weeks?",
+    o: ["Each 1 cm refers to 1 week of gestation", "Each 5 cm refers to 1 week", "Each 2 cm refers to 1 month", "Centimeters do not relate to weeks"],
+    a: 0,
+    trQ: "عند قياس ارتفاع قاع الرحم بالسنتيمتر بين الأسبوع 20 و 36، ماذا يعبر عنه القياس؟",
+    trO: ["كل 1 سم يعبر عن أسبوع واحد من الحمل", "كل 5 سم تعبر عن أسبوع", "كل 2 سم تعبر عن شهر", "السنتيمترات لا علاقة لها الأسابيع"]
+  },
+  {
+    q: "Which landmark is used for fundal height measurement at approximately 20 weeks of gestation?",
+    o: ["At the level of the umbilicus", "At the xiphoid process", "At the pubic symphysis", "Above the breasts"],
+    a: 0,
+    trQ: "ما هي العلامة التشريحية المستخدمة لقياس ارتفاع قاع الرحم في حوالي الأسبوع العشرين من الحمل؟",
+    trO: ["عند مستوى السرة (Umbilicus)", "عند الـ Xiphoid process", "عند ارتفاق العانة", "فوق الثديين"]
+  },
+  {
+    q: "What does 'Lie' mean in obstetric abdominal examination?",
+    o: ["The relationship between the long axis of the fetus to the long axis of the mother", "The position of the mother's hands", "The color of the amniotic fluid", "The depth of the placenta"],
+    a: 0,
+    trQ: "ماذا تعني كلمة (Lie) أو الوضعية في فحص بطن الحامل؟",
+    trO: ["العلاقة بين المحور الطولي للجنين والمحور الطولي للأم", "وضع يدي الأم", "لون السائل الأميوسي", "عمق المشيمة"]
+  },
+  {
+    q: "What does 'Position' refer to in the context of fetal assessment?",
+    o: ["The relationship between the back of the fetus and the abdominal wall of the mother", "The maternal sleeping posture", "The position of the delivery bed", "The nurse's standing position"],
+    a: 0,
+    trQ: "إلى ماذا يشير مصطلح (Position) أو الاتجاه في سياق تقييم الجنين؟",
+    trO: ["العلاقة بين ظهر الجنين وجدار بطن الأم", "وضع نوم الأم", "موضع سرير الولادة", "وضعية وقوف الممرضة"]
+  },
+  {
+    q: "What is the recommended duration to listen to fetal heart rate to evaluate it fully?",
+    o: ["For a full minute", "For 5 seconds only", "For 10 seconds", "For half a minute"],
+    a: 0,
+    trQ: "ما هي المدة الموصى بها للاستماع إلى معدل ضربات قلب الجنين لتقييمه بشكل كامل؟",
+    trO: ["دقيقة كاملة", "لمدة 5 ثوانٍ فقط", "لمدة 10 ثوانٍ", "لمدة نصف دقيقة"]
+  },
+  {
+    q: "Post-procedure duties after completing abdominal examination include:",
+    o: ["Removing gloves, washing hands, returning equipment, and recording findings", "Leaving the room immediately without cleaning", "Throwing all equipment in the regular trash", "Telling the mother to leave the clinic without explanation"],
+    a: 0,
+    trQ: "مهام ما بعد الإجراء بعد الانتهاء من فحص البطن تشمل:",
+    trO: ["خلع القفازات، غسل اليدين، إعادة المعدات، وتسجيل النتائج", "مغادرة الغرفة فوراً دون تنظيف", "إلقاء كل المعدات في القمامة العادية", "إخبار الأم بمغادرة العيادة دون شرح"]
+  },
+  {
+    q: "Abdominal examination includes visual, tactile, and audible examination of the woman's abdomen.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "فحص البطن يتضمن الفحص البصري، واللمسي، والصوتي (السمعي) لبطن المرأة.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "One of the objectives of abdominal examination is to observe signs of pregnancy like linea nigra and striae gravidarum.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "أحد أهداف فحص البطن هو ملاحظة علامات الحمل مثل الخط الأسود وخطوط التمدد.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "The nurse must explain the steps of the physical examination and obtain the woman's consent before starting.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "يجب على الممرضة شرح خطوات الفحص البدني والحصول على موافقة المرأة قبل البدء.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Asking the woman to empty her bladder before abdominal examination is an optional step that is not necessary.",
+    o: ["True", "False"],
+    a: 1,
+    trQ: "طلب إفراغ المثانة من المرأة قبل فحص البطن هو خطوة اختيارية وليست ضرورية.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "During the examination, the woman should be positioned on her back with knees flexed and slightly separated.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "أثناء الفحص، يجب وضع المرأة على ظهرها مع ثني الركبتين وتباعدهما قليلاً.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "A uterus size greater than the period of amenorrhea can be caused by multiple pregnancy or polyhydramnios.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "حجم الرحم الأكبر من فترة انقطاع الطمث يمكن أن يكون سببه الحمل المتعدد أو زيادة السائل الأميوسي.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Fundal height measurement is used to determine the weeks of gestation.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "قياس ارتفاع قاع الرحم يُستخدم لتحديد أسابيع الحمل.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "The first maneuver (fundal palpation) is used to determine which part of the fetus is occupying the fundus.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "المناورة الأولى (جس قاع الرحم) تُستخدم لتحديد أي جزء من الجنين يشغل قاع الرحم.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "In more than 99% of pregnancies, the fetal lie is transverse.",
+    o: ["True", "False"],
+    a: 1,
+    trQ: "في أكثر من 99% من حالات الحمل، تكون وضعية الجنين عرضية.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "The second maneuver (lateral palpation) helps determine the fetal lie and position, and find the fetal back.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "المناورة الثانية (الجس الجانبي) تساعد في تحديد وضعية واتجاه الجنين، والعثور على ظهر الجنين.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "The third maneuver (Pawlik's grip) is typically done at the 9th month or 36 weeks to feel the size and engagement of presenting part.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "المناورة الثالثة (قبضة باوليك) تُجرى عادة في الشهر التاسع أو الأسبوع 36 لتحسس حجم وانغماس الجزء المُقدم.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "The fourth maneuver (pelvic palpation) is used to determine the attitude of the fetus head.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "المناورة الرابعة (الجس الحوضي) تُستخدم لتحديد انثناء أو وضعية رأس الجنين (Attitude).",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "The normal fetal attitude is complete flexion.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "وضع الانثناء الطبيعي للجنين هو الانثناء الكامل (Complete flexion).",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Fetal heart sound can be heard by sonicaid as early as the 10th week of pregnancy.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "يمكن سماع صوت نبضات قلب الجنين بواسطة السونيكيد في وقت مبكر من الأسبوع العاشر من الحمل.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "A Pinard stethoscope (fetal stethoscope) can hear fetal heart sounds after the 20th week of pregnancy.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "سماعة بينارد (سماعة الجنين) يمكنها سماع صوت نبضات قلب الجنين بعد الأسبوع العشرين من الحمل.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "While auscultating fetal heart rate, the nurse must feel the mother's pulse simultaneously to ensure differentiation from maternal pulse.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "أثناء سماع نبضات قلب الجنين، يجب على الممرضة جس نبض الأم في نفس الوقت لضمان التمييز عن نبض الأم.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "At 20 weeks of gestation, the fundal height is typically at the level of the umbilicus.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "في الأسبوع العشرين من الحمل، يكون ارتفاع قاع الرحم عادة عند مستوى السرة.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Providing the woman with a drape or cloth for privacy is an unneeded step during abdominal physical examination.",
+    o: ["True", "False"],
+    a: 1,
+    trQ: "توفير غطاء أو قطعة قماش للخصوصية للمرأة هو خطوة غير ضرورية أثناء الفحص البدني للبطن.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Sharing findings with the woman and recording them properly are essential post-procedure responsibilities.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "مشاركة النتائج مع المرأة وتسجيلها بشكل صحيح هما مسؤوليتان أساسيتان بعد الإجراء.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Fetal movements can be observed or inspected on the mother's abdomen during physical examination.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "يمكن ملاحظة أو فحص حركات الجنين على بطن الأم أثناء الفحص البدني.",
+    trO: ["صحيح", "خطأ"]
+  }  
+  ],
   "place3": [],
   "place4": [],
   "place5": [],
