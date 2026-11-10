@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Maternal & Newborn Nursing (Practical) 🩺 | The Coding Nurse (𝒜ℳℋ)🩺💉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root[data-theme="light"] {
+  --primary: #0f4c81;
+  --secondary: #0ea5e9;
+  --success: #22c55e;
+  --danger: #dc2626;
+  --bg: #f1f5f9;
+  --card-bg: #ffffff;
+  --soft: #f8fafc;
+  --text: #0f172a;
+  --border: #e5e7eb;
+  --shadow: rgba(0,0,0,.06);
+}
+:root[data-theme="dark"] {
+  --primary: #38bdf8;
+  --secondary: #0ea5e9;
+  --success: #4ade80;
+  --danger: #f87171;
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --soft: #0f172a;
+  --text: #f8fafc;
+  --border: #334155;
+  --shadow: rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box; font-family:"Segoe UI", system-ui, sans-serif; transition: background 0.3s, color 0.3s;}
+body{margin:0; background:var(--bg); color:var(--text)}
+.container{max-width:1000px; margin:auto; padding:16px; position: relative;}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: -36px;
+  margin-bottom: 26px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.settings-bar {
+  display: flex;
+  gap: 6px;
+}
+
+.setting-btn, .theme-toggle {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--text);
+  box-shadow: 0 4px 12px var(--shadow);
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+.shake-anim { animation: shake 0.3s ease-in-out; }
+
+.hero{
+  text-align:center;
+  padding:40px 20px 50px 20px;
+  border-radius:24px;
+  background: linear-gradient(135deg, #0f4c81, #0ea5e9);
+  color:#fff;
+  margin-bottom: 20px;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 10px 25px rgba(15, 76, 129, 0.2);
+}
+.hero h1{margin:0; font-size:32px; font-weight:800}
+.hero h2{ margin-top:6px; font-size:18px; letter-spacing:2px; text-transform:uppercase; color:#bbf7d0;}
+
+.mid-nav{ display:flex; gap:10px; margin:24px 0; padding:6px 4px; overflow-x:auto;}
+.q-btn{
+  min-width:44px; padding:10px 0; border-radius:12px; border:2px solid var(--border);
+  background:var(--card-bg); color: var(--text); font-weight:700; cursor:pointer; transition: all 0.2s ease;
+}
+.q-btn.active{background:#dbeafe; border-color:var(--secondary); color:#0f4c81; transform: scale(1.1); box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);}
+.q-btn.correct{background:#dcfce7 !important; border-color:var(--success) !important; color: #16a34a !important;}
+.q-btn.wrong{background:#fee2e2 !important; border-color:var(--danger) !important; color: #dc2626 !important;}
+.q-btn.flagged{border-color: #f59e0b !important; background: #fef3c7 !important; color: #b45309 !important;}
+.q-btn.answered-exam { background: #e2e8f0; border-color: #94a3b8; color: #475569; }
+
+.card{
+  background:var(--card-bg); border-radius:22px; padding:28px;
+  box-shadow:0 14px 35px var(--shadow); text-align: center;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid var(--border);
+}
+
+.welcome-msg { 
+  font-size: 26px; 
+  color: #fff; 
+  font-weight: 800; 
+  margin-bottom: 25px; 
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  padding: 12px 24px;
+  border-radius: 50px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.salawat-wrapper {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+.salawat-card-badge {
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.08), rgba(14, 165, 233, 0.08));
+  border: 2px dashed var(--primary);
+  color: var(--text);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px var(--shadow);
+  animation: pulseGlow 2.5s infinite alternate;
+  direction: rtl;
+}
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 4px 15px var(--shadow); }
+  100% { transform: scale(1.03); box-shadow: 0 6px 22px rgba(14, 165, 233, 0.25); }
+}
+:root[data-theme="dark"] .salawat-card-badge {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(14, 165, 233, 0.12));
+}
+
+.main-mode-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin: 20px 0;
+}
+.main-choice-btn {
+  width: 100%;
+  max-width: 450px;
+  padding: 18px 24px;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  direction: rtl;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px var(--shadow);
+  border: 2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+}
+.main-choice-btn:hover {
+  transform: translateY(-3px);
+}
+.main-choice-btn.lectures-trigger {
+  border-left: 6px solid var(--primary);
+}
+.main-choice-btn.lectures-trigger:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
+}
+.main-choice-btn.exam-trigger {
+  border-left: 6px solid #f59e0b;
+}
+.main-choice-btn.exam-trigger:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25);
+}
+
+.dataset-selector {
+ margin: 0 0 18px 0;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ align-items: center;
+}
+.dataset-title {
+ font-size: 15px;
+ font-weight: 800;
+ color: var(--primary);
+ direction: rtl;
+}
+
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  max-width: 450px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  font-size: 15px;
+  background: var(--soft) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2364748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>') no-repeat;
+  background-position: left 16px center;
+  color: var(--text);
+  font-weight: 700;
+  direction: ltr;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+.custom-select:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+  background-color: var(--card-bg);
+}
+.custom-select option {
+  font-weight: bold;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.custom-select option[value="all"] {
+  color: #16a34a;
+  font-weight: 900;
+  direction: rtl;
+}
+
+.mode-selector {
+ margin: 20px 0 25px 0;
+ display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.mode-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--soft);
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  width: 100%;
+  max-width: 450px;
+  text-align: right;
+  direction: rtl;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.mode-option input { scale: 1.3; cursor: pointer; margin-left: 10px; }
+.mode-option:hover { border-color: var(--secondary); }
+.mode-option:has(input:checked) {
+  border-color: var(--secondary);
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.start-btn {
+  padding: 16px 50px; font-size: 18px; font-weight: 700; color: #fff;
+  background: linear-gradient(135deg, var(--success), #16a34a); border: none; border-radius: 16px;
+  cursor: pointer; transition: all 0.2s ease; width: 100%; max-width: 450px;
+  display: block; margin: 10px auto;
+}
+.start-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35); }
+
+.back-btn {
+  padding: 12px 30px; font-size: 15px; font-weight: 700; color: var(--text);
+  background: var(--soft); border: 2px solid var(--border); border-radius: 14px;
+  cursor: pointer; transition: all 0.2s; width: 100%; max-width: 450px;
+  display: block; margin: 12px auto;
+}
+.back-btn:hover { background: var(--border); transform: translateY(-1px); }
+
+.resume-btn {
+  padding: 14px 30px; font-size: 16px; font-weight: 700; color: var(--primary);
+  background: transparent; border: 2px solid var(--primary); border-radius: 16px;
+  cursor: pointer; transition: all 0.2s ease; display: none; width: 100%; max-width: 450px;
+  display: block; margin: 12px auto;
+}
+.resume-btn:hover { background: var(--primary); color: #fff; }
+
+.timer-box {
+  display: none;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 800;
+  color: var(--danger);
+  box-shadow: 0 4px 12px var(--shadow);
+  text-align: center;
+  margin: 10px auto 20px auto;
+  width: fit-content;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.progress{ height:10px; background:var(--border); border-radius:999px; overflow:hidden; margin-bottom:18px;}
+.progress span{
+  display:block; height:100%; width:0%;
+  background:linear-gradient(90deg, var(--secondary), var(--success));
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-box{
+  background: var(--soft);
+  border-left:6px solid var(--secondary); border-radius:18px; padding:22px; text-align: left;
+}
+
+.q-tools-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.q-badge {
+  background: var(--primary);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.q-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.question { font-size:19px; font-weight:600; line-height: 1.5; width: 100%; display: block; word-wrap: break-word; }
+
+.kw-highlight {
+  background-color: #fef08a;
+  color: #854d0e;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: #ca8a04;
+  text-decoration-thickness: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+:root[data-theme="dark"] .kw-highlight {
+  background-color: #713f12;
+  color: #fef08a;
+  text-decoration-color: #eab308;
+}
+
+#speakBtn, #stopSpeakBtn, #translateBtn { background: none; border: none; font-size: 20px; cursor: pointer; padding: 0; line-height: 1; transition: transform 0.2s; }
+#speakBtn:hover, #stopSpeakBtn:hover, #translateBtn:hover { transform: scale(1.2); }
+
+#flagBtn { background: none; border: none; font-size: 22px; cursor: pointer; padding: 0; line-height: 1; transition: transform 0.2s; filter: grayscale(1); }
+#flagBtn:hover { transform: scale(1.2); }
+#flagBtn.active { filter: grayscale(0) drop-shadow(0 0 4px #f59e0b) !important; transform: scale(1.1); }
+
+.translation-box {
+  display: none;
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--card-bg);
+  border-right: 4px solid var(--secondary);
+  border-radius: 12px;
+  direction: rtl;
+  text-align: right;
+  box-shadow: inset 0 2px 6px var(--shadow), 0 2px 8px var(--shadow);
+  animation: popIn 0.3s ease;
+}
+.trans-title { font-weight: bold; color: var(--secondary); margin-bottom: 8px; font-size: 14px; }
+.trans-q { font-size: 16px; font-weight: 600; margin-bottom: 12px; line-height: 1.5; color: var(--text); }
+.trans-o-list { margin: 0; padding-right: 20px; font-size: 15px; color: #475569; line-height: 1.7; }
+
+.options button{
+  width:100%; padding:16px; margin-bottom:12px; border-radius:14px;
+  border:2px solid var(--border); background:var(--card-bg); color: var(--text);
+  font-size:16px; text-align: left; cursor:pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.options button:not(:disabled):hover {
+  transform: translateY(-2px); border-color: var(--secondary);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.15);
+}
+.options button.correct{background:#ecfdf5 !important; border-color:var(--success) !important; color: #065f46 !important; font-weight: 700;}
+.options button.wrong{background:#fef2f2 !important; border-color:var(--danger) !important; color: #991b1b !important; font-weight: 700;}
+.options button.selected-exam { background: #e0f2fe !important; border-color: var(--secondary) !important; color: #0369a1 !important; font-weight: 700; }
+
+.nav{ display:flex; gap:12px; margin-top:26px;}
+.nav button{
+  flex:1; padding:14px; border-radius:14px; font-size:15px; font-weight:700; cursor:pointer; transition: all 0.2s;
+}
+.prev{background:var(--card-bg); border:2px solid var(--border); color: var(--text);}
+.prev:hover{background: var(--soft); transform: translateY(-1px);}
+.next{ border:none; color:#fff; background:linear-gradient(135deg,var(--primary),var(--secondary));}
+.next:hover{opacity: 0.95; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(15, 76, 129, 0.2);}
+
+.extra-nav { display: flex; gap: 12px; margin-top: 12px; }
+.extra-nav button { flex: 1; padding: 12px; border-radius: 14px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+.home-btn { background: var(--card-bg); border: 2px solid var(--border); color: var(--text); }
+.home-btn:hover { background: var(--soft); transform: translateY(-1px); }
+.finish-btn { background: linear-gradient(135deg, var(--danger), #b91c1c); border: none; color: #fff; }
+.finish-btn:hover { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+.result-msg { font-size: 18px; margin-bottom: 10px; line-height: 1.6; }
+.duck-msg { display: block; margin-top: 15px; font-weight: 800; color: var(--primary); font-size: 20px;}
+.stats-container {
+  display: flex; justify-content: space-around; background: var(--soft);
+  padding: 16px; border-radius: 16px; margin: 20px 0; border: 1px solid var(--border);
+}
+.stat-box { text-align: center; }
+.stat-val { font-size: 24px; font-weight: 800; }
+.stat-lbl { font-size: 13px; color: #64748b; margin-top: 4px; }
+.score{ font-size:48px; font-weight:900; color:var(--success); margin: 10px 0; text-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);}
+.badge-title { font-size: 22px; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.result-actions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 20px auto 0 auto;
+}
+.restart{
+  padding:14px 28px; border:none; border-radius:16px; font-size:16px; font-weight:700;
+  cursor:pointer; color:#fff; background:linear-gradient(135deg,#0f4c81,#0ea5e9); transition: all 0.2s;
+  width: 100%;
+}
+.restart:hover{transform: translateY(-2px); box-shadow: 0 6px 18px rgba(15, 76, 129, 0.35);}
+
+.review-btn {
+  padding: 14px 28px; border: 2px solid var(--success); border-radius: 16px; font-size: 16px; font-weight: 700;
+  cursor: pointer; color: var(--success); background: transparent; transition: all 0.2s;
+  width: 100%; display: none;
+}
+.review-btn:hover { background: var(--success); color: #fff; transform: translateY(-2px); }
+
+.download-btn {
+  padding: 14px 28px; border: 2px solid var(--primary); border-radius: 16px; font-size: 16px; font-weight: 700;
+  cursor: pointer; color: var(--primary); background: transparent; transition: all 0.2s;
+  width: 100%;
+}
+.download-btn:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="hero">
+        <h1>Maternal & Newborn Nursing (Practical) 🩺</h1>
+        <h2>Question app</h2>
+        <p>Prepared by <strong>The Coding Nurse (𝒜ℳℋ)🩺💉</strong></p>
+    </div>
+
+    <div class="top-bar">
+        <div class="settings-bar">
+            <button class="setting-btn" id="soundToggle" onclick="toggleSound()"><span>🔊</span> Sound On</button>
+            <button class="setting-btn" id="vibeToggle" onclick="toggleVibration()"><span>📳</span> Vibe On</button>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()"><span>🌓</span> Dark Mode</button>
+    </div>
+
+    <div class="card" id="startCard">
+        
+        <div class="salawat-wrapper">
+            <div class="salawat-card-badge">✨ صلي علي النبي 🤍🐣✨</div>
+        </div>
+        
+        <div id="mainModeMenu" class="main-mode-view">
+            <button class="main-choice-btn lectures-trigger" onclick="selectRootMode('lectures')">
+                <span>📌 📚 أسئله علي المحاضرات </span>
+                <span>⬅️</span>
+            </button>
+            <button class="main-choice-btn exam-trigger" onclick="selectRootMode('comprehensive_exam')">
+                <span>📌 🏆 وضع الامتحان الشامل </span>
+                <span>⭐</span>
+            </button>
+        </div>
+
+        <div id="lecturesSetupContainer" style="display: none;">
+            <div id="highScoreView" style="display:none; font-weight:bold; margin:0 auto 16px auto; color:var(--success); font-size:14px; background:rgba(34, 197, 94, 0.08); padding:8px 16px; border-radius:50px; border:1px dashed var(--success); width:fit-content; direction:rtl;">
+                🏆 أعلى سكور: <span id="highScoreVal">0%</span>
+            </div>
+
+            <div class="dataset-selector">
+                <div class="dataset-title">: Choose the lecture first</div>
+                <select id="datasetDrawer" class="custom-select" onchange="setDataset(this.value)">
+                    <option value="place1">1. Antenatal Assessment (History, Physical Examination & Testing)</option>
+                    <option value="place2">2. Abdominal Examination during pregnancy</option>
+                    <option value="place3">3. Auscultation Fetal Heart Rate</option>
+                    <option value="place4">4. Pitting Edema Assessment</option>
+                    <option value="place5">5. Deep Tendon Reflex Assessment</option>
+                    <option value="place6">6. Administration of Magnesium Sulphate</option>
+                    <option value="place7">7. Management of oxytocin infusion</option>
+                    <option value="place8">8. Partogram</option>
+                    <option value="place9">9. Vaginal examination</option>
+                    <option value="place10">10. Placental examination</option>
+                    <option value="place11">11. Episiotomy</option>
+                    <option value="place12">12. Immediate care of the newborn</option>
+                    <option value="place13">13. Fundus Massage</option>
+                    <option value="place14">14. Breast Care</option>
+                    <option value="place15">15. Perineal Care</option>
+                    <option value="place16">16. Pap Smear</option>
+                    <option value="place17">17. Breast Examination</option>
+                </select>
+            </div>
+
+            <div class="mode-selector">
+                <label class="mode-option">
+                    <input type="radio" name="quizMode" value="sequential" onchange="setMode('sequential')">
+                    <span>🔢 وضع الترتيب (أسئلة واختيارات مرتبة بدون عشوائية)</span>
+                </label>
+                <label class="mode-option">
+                    <input type="radio" name="quizMode" value="study" checked onchange="setMode('study')">
+                    <span>📖 وضع المذاكرة (عشوائي + تصحيح فوري للمعلومات)</span>
+                </label>
+                <label class="mode-option">
+                    <input type="radio" name="quizMode" value="memorize" onchange="setMode('memorize')">
+                    <span>🧠 وضع البصمجة (كشف الإجابة الصحيحه للمراجعه)</span>
+                </label>
+                <label class="mode-option">
+                    <input type="radio" name="quizMode" value="exam" onchange="setMode('exam')">
+                    <span>⏳ وضع الامتحان (عشوائي + تايمر وبدون كشف الإجابات)</span>
+                </label>
+                <label class="mode-option">
+                    <input type="radio" name="quizMode" value="bookmark" onchange="setMode('bookmark')">
+                    <span>🔖 مراجعة الأسئلة المميزة فقط</span>
+                </label>
+            </div>
+
+            <button class="start-btn" onclick="startQuiz()">Start 🚀</button>
+            <button class="back-btn" onclick="selectRootMode('main')">⬅️ العودة للرئيسية</button>
+            <button class="resume-btn" id="resumeBtn" onclick="resumeQuiz()">استكمال محاولة الحل السابقة 🔄</button>
+        </div>
+    </div>
+
+    <div id="quizContainer" style="display:none">
+        <div class="timer-box" id="timerBox">⏳ المتبقي: <span id="timerDisplay">00:00</span></div>
+        <div class="mid-nav" id="midNav"></div>
+        <div class="card" id="quizCard">
+            <div class="progress"><span id="progressBar"></span></div>
+            <div class="question-box">
+                
+                <div class="q-tools-bar">
+                    <span class="q-badge" id="qIndexBadge">Question</span>
+                    <div class="q-actions">
+                        <button id="translateBtn" onclick="toggleTranslation()" title="ترجمة السؤال للعربية" style="display:none;">🌍</button>
+                        <button id="speakBtn" onclick="speakQuestion()" title="بدء النطق من أول وجديد">🔊</button>
+                        <button id="stopSpeakBtn" onclick="toggleSpeechPause()" title="إيقاف مؤقت" style="display:none;">⏸️</button>
+                        <button id="flagBtn" onclick="toggleFlag()" title="Bookmark Question">🔖</button>
+                    </div>
+                </div>
+
+                <div class="question" id="question"></div>
+                
+                <div class="translation-box" id="translationBox">
+                    <div class="trans-title">🎯 الترجمة العربية:</div>
+                    <div class="trans-q" id="transQText"></div>
+                    <ul class="trans-o-list" id="transOList"></ul>
+                </div>
+
+                <div class="options" id="options" style="margin-top: 20px;"></div>
+            </div>
+            
+            <div class="nav">
+                <button class="prev" onclick="prevQ()">⬅ Previous</button>
+                <button class="next" onclick="nextQ()">Next ➡</button>
+            </div>
+            
+            <div class="extra-nav">
+                <button class="home-btn" onclick="goToHome()">🏠 الرئيسية (حفظ)</button>
+                <button class="finish-btn" onclick="showResult()">📊 إنهاء وعرض النتيجة</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card result" id="resultCard" style="display:none">
+        <div class="result-msg" style="color: var(--primary); font-weight: bold;">✨🤍 صلي علي النبي ✨ </div>
+        <div class="result-msg">
+            متزعلش لو نتيجة حلك مكنتش أحسن حاجه خليك ديما فاكر ان لسه فيه فرصه تحاول سمي الله وحاول تاني
+            <span class="duck-msg">( 🐥 أشطر كتكوت يخواشي )</span>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-val" id="statCorrect" style="color: var(--success);">0</div>
+                <div class="stat-lbl">Correct ✅</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val" id="statWrong" style="color: var(--danger);">0</div>
+                <div class="stat-lbl">Wrong ❌</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val" id="statRatio" style="color: var(--secondary);">0%</div>
+                <div class="stat-lbl">Accuracy 🎯</div>
+            </div>
+        </div>
+
+        <h2>Final Result</h2>
+        <div class="score" id="scoreText"></div>
+        <div class="badge-title" id="badgeTitle"></div>
+        
+        <div class="result-actions-container">
+            <button class="review-btn" id="reviewBtn" onclick="startReview()">🔁 مراجعة الأخطاء فقط</button>
+            <button class="download-btn" id="downloadBtn" onclick="downloadResultCard()">📸 تحميل النتيجة كصورة</button>
+            <button class="restart" onclick="restartQuiz()">🔄 Restart Quiz</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+const datasets = {
+  "place1": [
+  {
+    q: "What does the nurse observe about the skin during general assessment?",
+    o: ["Temperature & texture", "Presence of edema", "Free from lesions/bruises", "Color & pigmentation"],
+    a: 2,
+    trQ: "ماذا تراقب الممرضة بشأن الجلد أثناء التقييم العام؟",
+    trO: ["درجة الحرارة والملمس", "وجود تورم", "خالي من الآفات والكدمات", "اللون والتصبغ"]
+  },
+  {
+    q: "What is important to ask regarding previous childbirth?",
+    o: ["Date of last abortion", "Sex & weight of newborn", "Consuming during pregnancy", "History of asthma"],
+    a: 1,
+    trQ: "من المهم السؤال عنه بخصوص الولادات السابقة؟",
+    trO: ["تاريخ آخر إجهاض", "جنس ووزن كل مولود", "التغذية أثناء الحمل", "تاريخ مرض الربو"]
+  },
+  {
+    q: "What is included in the menstrual & contraceptive history?",
+    o: ["Duration of labor", "Age of menarche & interval", "History of pelvic injury", "Previous C.S. scars"],
+    a: 1,
+    trQ: "ماذا يشمل تاريخ الحيض ومنع الحمل؟",
+    trO: ["مدة المخاض", "سن البلوغ والفاصل", "تاريخ إصابة الحوض", "ندوب القيصرية السابقة"]
+  },
+  {
+    q: "What to ask regarding tetanus immunization?",
+    o: ["Received tetanus vaccine?", "History of allergies?", "Source of income?", "Diagnosed with anemia?"],
+    a: 0,
+    trQ: "ماذا نسأل بخصوص تحصين التيتانوس؟",
+    trO: ["هل تلقيت لقاح التيتانوس؟", "تاريخ الحساسية؟", "مصدر الدخل؟", "هل تم تشخيصك بفقر الدم؟"]
+  },
+  {
+    q: "Asking about the woman's housing condition and crowding index is part of:",
+    o: ["Obstetric history", "Personal Information", "Medical history", "Menstrual history"],
+    a: 1,
+    trQ: "السؤال عن حالة السكن ومؤشر الازدحام للمرأة هو جزء من:",
+    trO: ["التاريخ التوليدي", "المعلومات الشخصية", "التاريخ الطبي", "تاريخ الحيض"]
+  },
+  {
+    q: "Which of the following is asked in the 'Obstetric History'?",
+    o: ["Tetanus immunization", "Previous childbirth details (sex, weight)", "Housing condition", "Age of menarche"],
+    a: 1,
+    trQ: "أي مما يلي يسأل عنه في 'التاريخ التوليدي'؟",
+    trO: ["تحصين التيتانوس", "تفاصيل الولادات السابقة (الجنس، الوزن)", "حالة السكن", "سن البلوغ"]
+  },
+
+  // --- أسئلة جدول المتابعات (Schedule of Antenatal Visits) ---
+  {
+    q: "According to the schedule of antenatal visits, how often is the visit from week 4 to 28?",
+    o: ["Every week", "Every 2 weeks", "A month (every month)", "Every 3 months"],
+    a: 2,
+    trQ: "وفقاً لجدول زيارات ما قبل الولادة، كم مرة تكون الزيارة من الأسبوع 4 إلى 28؟",
+    trO: ["كل أسبوع", "كل أسبوعين", "شهرياً (كل شهر)", "كل 3 أشهر"]
+  },
+  {
+    q: "From weeks 28 to 36 of pregnancy, antenatal visits should be scheduled:",
+    o: ["Every week", "Every 2 weeks", "Every month", "Every 6 weeks"],
+    a: 1,
+    trQ: "من الأسبوع 28 إلى 36 من الحمل، يجب جدولة زيارات ما قبل الولادة:",
+    trO: ["كل أسبوع", "كل أسبوعين", "كل شهر", "كل 6 أسابيع"]
+  },
+  {
+    q: "During the final weeks of pregnancy, from week 36 to 40, how frequently are antenatal visits?",
+    o: ["Every week", "Every 2 weeks", "Every month", "Only if there is pain"],
+    a: 0,
+    trQ: "خلال الأسابيع الأخيرة من الحمل، من الأسبوع 36 إلى 40، ما مدى تكرار زيارات ما قبل الولادة؟",
+    trO: ["كل أسبوع", "كل أسبوعين", "كل شهر", "فقط عند وجود ألم"]
+  },
+
+  // --- باقي أسئلة الـ MCQ (مع السؤال المضاف ليكملوا 30) ---
+  {
+    q: "What should the nurse ask about during the 'Present Pregnancy' assessment in the first visit?",
+    o: ["Symptoms of pregnancy and if she has felt the baby move", "Her favorite hobbies", "The exact cost of delivery", "Her husband's birth date"],
+    a: 0,
+    trQ: "ما الذي يجب على الممرضة السؤال عنه أثناء تقييم 'الحمل الحالي' في الزيارة الأولى؟",
+    trO: ["أعراض الحمل وما إذا كانت قد شعرت بحركة الجنين", "هواياتها المفضلة", "التكلفة الدقيقة للولادة", "تاريخ ميلاد زوجها"]
+  },
+  {
+    q: "Which tool or device is used during antenatal assessment to auscultate the fetal heart rate?",
+    o: ["Sphygmomanometer", "Pinard fetoscope or sonic fetal heart sound device", "Thermometer", "Tongue depressor"],
+    a: 1,
+    trQ: "ما هي الأداة أو الجهاز المستخدم أثناء تقييم ما قبل الولادة لسماع نبضات قلب الجنين؟",
+    trO: ["جهاز قياس ضغط الدم", "سماعة بينارد أو جهاز صوت نبضات قلب الجنين", "الترمومتر", "خافض اللسان"]
+  },
+  {
+    q: "What is the primary purpose of asking for the woman's address and phone number on the first visit?",
+    o: ["To send gifts", "To trace her by home visit if she misses an appointment", "For billing purposes", "To check her social status"],
+    a: 1,
+    trQ: "ما الغرض الأساسي من طلب عنوان ورقم هاتف المرأة في الزيارة الأولى؟",
+    trO: ["إرسال الهدايا", "تتبعها بزيارة منزلية إذا فاتتها موعدها", "لأغراض الفواتير", "للتحقق من وضعها الاجتماعي"]
+  },
+  {
+    q: "Which of the following is considered a chronic illness asked about in Medical History?",
+    o: ["Heart disease and Diabetes Mellitus", "Common cold", "Simple headache", "Temporary fatigue"],
+    a: 0,
+    trQ: "أي مما يلي يعتبر مرضاً مزمنًا يُسأل عنه في التاريخ الطبي؟",
+    trO: ["أمراض القلب ومرض السكري", "نزلات البرد الشائعة", "صداع بسيط", "إرهاق مؤقت"]
+  },
+  {
+    q: "In Daily Habits, the nurse should ask if the pregnant woman is exposed to hazards such as:",
+    o: ["Fresh fruits", "Caffeine, tobacco, and harmful substances", "Clean drinking water", "Cotton clothes"],
+    a: 1,
+    trQ: "في العادات اليومية، يجب على الممرضة أن تسأل عما إذا كانت الحامل تعرضت لمخاطر مثل:",
+    trO: ["الفواكه الطازجة", "الكافيين، التبغ، والمواد الضارة", "مياه الشرب النظيفة", "الملابس القطنية"]
+  },
+  {
+    q: "When calculating the Expected Date of Delivery (EDD), which date is used as a reference?",
+    o: ["Date of marriage", "First day of last menstrual period (LMP)", "Date of positive pregnancy test", "Date of quickening"],
+    a: 1,
+    trQ: "عند حساب موعد الولادة المتوقع (EDD)، ما هو التاريخ المستخدم كمرجع؟",
+    trO: ["تاريخ الزواج", "اليوم الأول لآخر دورة شهرية (LMP)", "تاريخ اختبار الحمل الإيجابي", "تاريخ حكة الحركة الأولى"]
+  },
+  {
+    q: "What detail is essential when taking Obstetrical history for previous pregnancies?",
+    o: ["Length, outcome, and numbers of previous pregnancies", "Favorite food", "Shoe size", "Hair color"],
+    a: 0,
+    trQ: "ما هي التفاصيل الأساسية عند أخذ التاريخ التوليدي للحمل السابق؟",
+    trO: ["مدة ونتيجة وأعداد الأحمال السابقة", "الطعام المفضل", "مقاس الحذاء", "لون الشعر"]
+  },
+  {
+    q: "If stillborn babies died before 1 month of age, where is this information recorded?",
+    o: ["Family history", "Details of previous childbirth", "Menstrual history", "Personal information"],
+    a: 1,
+    trQ: "إذا توفي الأطفال المواليد أمواتاً قبل سن شهر، أين يتم تسجيل هذه المعلومات؟",
+    trO: ["التاريخ العائلي", "تفاصيل الولادات السابقة", "تاريخ الحيض", "المعلومات الشخصية"]
+  },
+  {
+    q: "Complications such as P.P.H. (Postpartum Hemorrhage) in previous births belong to:",
+    o: ["Details of previous postpartum", "Medical history", "General assessment", "Optional tests"],
+    a: 0,
+    trQ: "المضاعفات مثل النزف التالي للولادة (P.P.H.) في الولادات السابقة تنتمي إلى:",
+    trO: ["تفاصيل فترة النفاس السابقة", "التاريخ الطبي", "التقييم العام", "الاختبارات الاختيارية"]
+  },
+  {
+    q: "During the General Examination, measuring blood pressure is crucial. If diastolic BP is greater than what value, the nurse should check for severe symptoms?",
+    o: ["60 mmHg", "80 mmHg", "90 mmHg", "120 mmHg"],
+    a: 2,
+    trQ: "أثناء الفحص العام، يعد قياس ضغط الدم أمرًا بالغ الأهمية. إذا كان ضغط الدم الانبساطي أكبر من أي قيمة، يجب على الممرضة التحقق من الأعراض الشديدة؟",
+    trO: ["60 مم سجق", "80 مم سجق", "90 مم سجق", "120 مم سجق"]
+  },
+  {
+    q: "What symptoms should be checked if diastolic blood pressure is > 90 mmHg?",
+    o: ["Headache, blurred vision, or epigastric pain", "Hunger and thirst", "Hair loss", "Nail brittleness"],
+    a: 0,
+    trQ: "ما هي الأعراض التي يجب التحقق منها إذا كان ضغط الدم الانبساطي > 90 مم سجق؟",
+    trO: ["الصداع، زغللة العين، أو ألم أعلى البطن", "الجوع والعطش", "تساقط الشعر", "هشاشة الأظافر"]
+  },
+  {
+    q: "When examining the head, what is the nurse checking for?",
+    o: ["Lice and nits", "Bone fractures", "Brain tumors", "Ear infections"],
+    a: 0,
+    trQ: "عند فحص الرأس، ما الذي تتأكد منه الممرضة؟",
+    trO: ["القمل والصئبان", "كسور العظام", "أورام المخ", "التهابات الأذن"]
+  },
+  {
+    q: "Palpating nodes below the posterior angle of jawbones is part of examining the:",
+    o: ["Chest", "Neck", "Abdomen", "Extremities"],
+    a: 1,
+    trQ: "جس العقد تحت الزاوية الخلفية لعظام الفك يعتبر جزءاً من فحص:",
+    trO: ["الصدر", "الرقبة", "البطن", "الأطراف"]
+  },
+  {
+    q: "What does paleness (pallor) of the conjunctiva potentially indicate?",
+    o: ["Anemia", "High fever", "Hypertension", "Diabetes"],
+    a: 0,
+    trQ: "ما الذي قد يشير إليه شحب الملتحمة؟",
+    trO: ["فقر الدم", "حمى عالية", "ارتفاع ضغط الدم", "مرض السكري"]
+  },
+  {
+    q: "When performing a urine analysis for sugar and albumin, how long should the nurse wait for Clinistix reaction?",
+    o: ["1-5 seconds", "30-60 seconds", "5-10 minutes", "1 hour"],
+    a: 1,
+    trQ: "عند إجراء تحليل البول للسكر والألبومين، ما هي المدة التي يجب أن تنتظرها الممرضة لتفاعل Clinistix؟",
+    trO: ["1-5 ثوانٍ", "30-60 ثانية", "5-10 دقائق", "ساعة واحدة"]
+  },
+  {
+    q: "In routine tests, if hemoglobin is less than 7 g/dl, what is the appropriate action?",
+    o: ["Ignore it", "Refer woman to hospital", "Give extra vitamins only", "Tell her to walk more"],
+    a: 1,
+    trQ: "في الفحوصات الروتينية، إذا كان الهيموجلوبين أقل من 7 جم/ديسيلتر، ما هو الإجراء المناسب؟",
+    trO: ["تجاهله", "إحالة المرأة إلى المستشفى", "إعطاء فيتامينات إضافية فقط", "إخبارها بالمشي أكثر"]
+  },
+  {
+    q: "If hemoglobin is between 7-11 g/dl during routine tests, what treatment is ordered?",
+    o: ["Iron/folate 1 tablet twice daily", "Immediate surgery", "Blood transfusion only", "Antibiotics"],
+    a: 0,
+    trQ: "إذا كان الهيموجلوبين يتراوح بين 7-11 جم/ديسيلتر أثناء الفحوصات الروتينية، ما هو العلاج الموصوف؟",
+    trO: ["حديد/حمض الفوليك قرص واحد مرتين يوميا", "جراحة فورية", "نقل دم فقط", "مضادات حيوية"]
+  },
+  {
+    q: "Testing for blood group and Rh is performed. If negative, the woman is a candidate for:",
+    o: ["Anti-D immune globulin", "Insulin injection", "Tetanus shot only", "Pain killers"],
+    a: 0,
+    trQ: "يتم إجراء اختبار فصيلة الدم وعامل ريسوس (Rh). إذا كان سلبيًا، تكون المرأة مرشحة لتلقي:",
+    trO: ["حقنة مناعية مضادة لـ D (Anti-D)", "حقن الأنسولين", "حقنة التيتانوس فقط", "مسكنات الألم"]
+  },
+  {
+    q: "Blood tests to check for diabetes during prenatal visits are usually done when the woman is around:",
+    o: ["4-6 weeks", "10-12 weeks", "24-28 weeks", "38-40 weeks"],
+    a: 2,
+    trQ: "تُجرى فحوصات الدم للتحقق من مرض السكري أثناء زيارات ما قبل الولادة عادة عندما تكون المرأة في حدود:",
+    trO: ["4-6 أسابيع", "10-12 أسبوعًا", "24-28 أسبوعًا", "38-40 أسبوعًا"]
+  },
+  {
+    q: "Cultures of swabs of the vagina and rectum to test for group B streptococcus are performed around:",
+    o: ["10-12 weeks", "20-22 weeks", "35-37 weeks", "40 weeks"],
+    a: 2,
+    trQ: "تُجرى مسحات المهبل والمستقيم للاختبار بحثًا عن العقدية من المجموعة B حوالي الأسبوع:",
+    trO: ["10-12", "20-22", "35-37", "40"]
+  },
+  {
+    q: "Which of the following is considered an optional test during antenatal care?",
+    o: ["Hemoglobin test", "Blood group and Rh", "Amniocentesis for chromosome information", "Routine urine test"],
+    a: 2,
+    trQ: "أي مما يلي يعتبر اختبارًا اختياريًا أثناء رعاية ما قبل الولادة؟",
+    trO: ["اختبار الهيموجلوبين", "فصيلة الدم وعامل ريسوس", "بزل السلى لمعلومات الكروموسومات", "اختبار البول الروتيني"]
+  },
+
+  // --- الـ 20 سؤال True & False ---
+  {
+    q: "According to the schedule, antenatal visits from week 4 to 28 are scheduled once a month.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "وفقاً للجدول، تكون زيارات ما قبل الولادة من الأسبوع 4 إلى 28 مرة في الشهر.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "From weeks 28 to 36 of pregnancy, antenatal visits should take place every 2 weeks.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "من الأسبوع 28 إلى 36 من الحمل، يجب أن تتم زيارات ما قبل الولادة كل أسبوعين.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "In the final weeks of pregnancy (weeks 36 to 40), antenatal visits are required every week.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "في الأسابيع الأخيرة من الحمل (من الأسبوع 36 إلى 40)، تكون زيارات ما قبل الولادة مطلوبة كل أسبوع.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "The nurse should ask the woman's name, address, and available phone number on the first visit.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "يجب على الممرضة السؤال عن اسم المرأة وعنوانها ورقم هاتفها المتاح في الزيارة الأولى.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Housing condition and crowding index are asked under Medical History.",
+    o: ["True", "False"],
+    a: 1,
+    trQ: "يتم السؤال عن حالة السكن ومؤشر الازدحام تحت التاريخ الطبي.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Asking if the woman has received care from another caregiver is part of Personal Information in the first visit.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "السؤال عما إذا كانت المرأة قد تلقت رعاية من مقدم رعاية آخر هو جزء من المعلومات الشخصية في الزيارة الأولى.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "A history of pelvic injury is included in Medical and Surgical History.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "تاريخ إصابة الحوض يتم تضمينه في التاريخ الطبي والجراحي.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Current medication and previous surgeries like C.S. are part of Medical and Surgical History.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "الأدوية الحالية والعمليات السابقة مثل العمليات القيصرية هي جزء من التاريخ الطبي والجراحي.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Family history includes asking about D.M., hypertension, and cardiac disease.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "التاريخ العائلي يتضمن السؤال عن مرض السكري، ارتفاع ضغط الدم، وأمراض القلب.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Exposure to violence and chemical substances is asked under Daily Habits and Life Style.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "التعرض للعنف والمواد الكيميائية يُسأل عنه تحت العادات اليومية وأسلوب الحياة.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Age of menarche and menstrual interval are part of Menstrual and Contraceptive History.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "سن البلوغ وفاصل الحيض هما جزء من تاريخ الحيض وموانع الحمل.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Interim history is evaluated at every ANC visit for return visits.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "يتم تقييم التاريخ المرحلي في كل زيارة رعاية حمل للزيارات اللاحقة.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "During general physical examination, measuring weight without shoes is essential to establish a baseline.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "أثناء الفحص البدني العام، يعد قياس الوزن بدون حذاء أمرًا أساسيًا لتحديد خط الأساس.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Draping the woman and providing privacy is an important step during physical examination.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "تغطية المرأة (Draping) وتوفير الخصوصية خطوة مهمة أثناء الفحص البدني.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Checking hair for lice and nits is a part of examining the head.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "التحقق من خلو الشعر من القمل والصئبان هو جزء من فحص الرأس.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Palpating the thyroid gland is done during the examination of the abdomen.",
+    o: ["True", "False"],
+    a: 1,
+    trQ: "يتم جس الغدة الدرقية أثناء فحص البطن.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Examining the legs for dilated veins (varicose veins) is a step in physical assessment.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "فحص الساقين بحثًا عن الأوردة المتضخمة (الدوالي) هو خطوة في التقييم البدني.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Urine analysis for sugar and albumin uses Clinistix strips.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "تحليل البول للسكر والألبومين يستخدم شرائط Clinistix.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Hemoglobin test is a routine test done during antenatal care.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "اختبار الهيموجلوبين هو اختبار روتيني يتم إجراؤه أثناء رعاية ما قبل الولادة.",
+    trO: ["صحيح", "خطأ"]
+  },
+  {
+    q: "Instructing the woman to evacuate her bladder and collect a specimen of urine is part of the preparation steps in antenatal assessment.",
+    o: ["True", "False"],
+    a: 0,
+    trQ: "توجيه المرأة لإفراغ مثانتها وجمع عينة بول هو جزء من خطوات التحضير في تقييم ما قبل الولادة.",
+    trO: ["صحيح", "خطأ"]
+  }
+  ],
+  "place2": [],
+  "place3": [],
+  "place4": [],
+  "place5": [],
+  "place6": [],
+  "place7": [],
+  "place8": [],
+  "place9": [],
+  "place10": [],
+  "place11": [],
+  "place12": [],
+  "place13": [],
+  "place14": [],
+  "place15": [],
+  "place16": [],
+  "place17": []
+}; 
+let quiz = []; 
+let answers = []; 
+let i=0, score=0;
+let currentMode = 'study'; 
+let currentDataset = 'place1'; 
+let timerInterval;
+let isReviewMode = false;
+let isComprehensiveExamMode = false;
+
+let soundEnabled = true;
+let vibrationEnabled = true;
+let autoAdvanceTimeout;
+let audioCtx = null; 
+
+const qDiv=document.getElementById("question"),
+      oDiv=document.getElementById("options"),
+      progress=document.getElementById("progressBar"),
+      midNav=document.getElementById("midNav"),
+      quizContainer=document.getElementById("quizContainer"),
+      startCard=document.getElementById("startCard"),
+      resultCard=document.getElementById("resultCard"),
+      scoreText=document.getElementById("scoreText");
+
+function getDatasetLabel(dataset) {
+    if (dataset === 'all') return "الامتحان الشامل";
+    const drawer = document.getElementById("datasetDrawer");
+    if(drawer) {
+        const selectedOption = drawer.querySelector(`option[value="${dataset}"]`);
+        if(selectedOption) return selectedOption.textContent;
+    }
+    return dataset;
+}
+
+function playAudioTone(type) {
+    if(!soundEnabled) return; 
+    try {
+        if (!audioCtx) { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+        if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+        const oscillator = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        oscillator.connect(gainNode); gainNode.connect(audioCtx.destination);
+        
+        if(type === 'correct') {
+            oscillator.frequency.setValueAtTime(523.25, audioCtx.currentTime); 
+            oscillator.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.08); 
+            gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+            oscillator.start(); oscillator.stop(audioCtx.currentTime + 0.25);
+        } else if(type === 'wrong') {
+            oscillator.type = 'sawtooth'; oscillator.frequency.setValueAtTime(140, audioCtx.currentTime);
+            gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime); gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+            oscillator.start(); oscillator.stop(audioCtx.currentTime + 0.35);
+        } else if(type === 'click') {
+            oscillator.frequency.setValueAtTime(380, audioCtx.currentTime); gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.06);
+            oscillator.start(); oscillator.stop(audioCtx.currentTime + 0.06);
+        }
+    } catch(e) { console.log("Audio issue handled."); }
+}
+
+function triggerHaptic(type) {
+    if (!vibrationEnabled) return; 
+    if (navigator.vibrate) {
+        if (type === 'correct') navigator.vibrate(70);
+        else if (type === 'wrong') navigator.vibrate([100, 60, 100]);
+        else if (type === 'click') navigator.vibrate(35);
+    }
+}
+
+function toggleSound() {
+    soundEnabled = !soundEnabled;
+    document.getElementById("soundToggle").innerHTML = soundEnabled ? "<span>🔊</span> Sound On" : "<span>🔇</span> Sound Off";
+}
+
+function toggleVibration() {
+    vibrationEnabled = !vibrationEnabled;
+    document.getElementById("vibeToggle").innerHTML = vibrationEnabled ? "<span>📳</span> Vibe On" : "<span>📴</span> Vibe Off";
+}
+
+function setMode(mode) { currentMode = mode; showHighScore(); }
+function setDataset(dataset) { currentDataset = dataset; showHighScore(); }
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', targetTheme);
+  document.querySelector('.theme-toggle').innerHTML = targetTheme === 'dark' ? '<span>☀️</span> Light Mode' : '<span>🌓</span> Dark Mode';
+}
+
+function prepareQuizData(shouldShuffle) {
+    quiz.forEach(q => {
+        q.combinedOptions = q.o.map((enText, idx) => ({
+            en: enText,
+            ar: q.trO && q.trO[idx] ? q.trO[idx] : ""
+        }));
+    });
+    
+    if(shouldShuffle) {
+        for (let currentIdx = quiz.length - 1; currentIdx > 0; currentIdx--) {
+            const randomIdx = Math.floor(Math.random() * (currentIdx + 1));
+            [quiz[currentIdx], quiz[randomIdx]] = [quiz[randomIdx], quiz[currentIdx]];
+        }
+        quiz.forEach(q => {
+            for (let j = q.combinedOptions.length - 1; j > 0; j--) {
+                const r = Math.floor(Math.random() * (j + 1));
+                [q.combinedOptions[j], q.combinedOptions[r]] = [q.combinedOptions[r], q.combinedOptions[j]];
+            }
+        });
+    }
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    let totalSeconds = isComprehensiveExamMode ? 3600 : quiz.length * 30; 
+    const timerDisplay = document.getElementById("timerDisplay");
+    document.getElementById("timerBox").style.display = "block";
+    
+    function refreshTimerView() {
+        let mins = Math.floor(totalSeconds / 60);
+        let secs = totalSeconds % 60;
+        timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    refreshTimerView();
+    timerInterval = setInterval(() => {
+        totalSeconds--;
+        if(totalSeconds <= 0) { clearInterval(timerInterval); showResult(); } else { refreshTimerView(); }
+    }, 1000);
+}
+
+function getFlaggedTexts() { return JSON.parse(localStorage.getItem("theCodingNurse_flagged_questions") || "[]"); }
+
+function speakQuestion() {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); 
+        let structuredText = `Question number ${i + 1}: ${quiz[i].q}. `;
+        quiz[i].combinedOptions.forEach((opObj, idx) => { structuredText += `Choice number ${idx + 1}: ${opObj.en}. `; });
+        const utterance = new SpeechSynthesisUtterance(structuredText);
+        utterance.lang = 'en-US'; utterance.rate = 0.88;
+        utterance.onstart = () => {
+            const stopBtn = document.getElementById("stopSpeakBtn");
+            stopBtn.style.display = "inline-block"; stopBtn.innerHTML = "⏸️";
+        };
+        const resetAudioUI = () => { document.getElementById("stopSpeakBtn").style.display = "none"; };
+        utterance.onend = resetAudioUI; utterance.onerror = resetAudioUI;
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+function toggleSpeechPause() {
+    if ('speechSynthesis' in window) {
+        const stopBtn = document.getElementById("stopSpeakBtn");
+        if (window.speechSynthesis.speaking) {
+            if (window.speechSynthesis.paused) { window.speechSynthesis.resume(); stopBtn.innerHTML = "⏸️"; } 
+            else { window.speechSynthesis.pause(); stopBtn.innerHTML = "▶️"; }
+        }
+    }
+}
+
+function forceStopSpeechEngine() {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const stopBtn = document.getElementById("stopSpeakBtn");
+        if (stopBtn) stopBtn.style.display = "none";
+    }
+}
+
+function toggleTranslation() {
+    const tBox = document.getElementById("translationBox");
+    tBox.style.display = (tBox.style.display === "block") ? "none" : "block";
+}
+
+function selectRootMode(rootMode) {
+    const mainMenu = document.getElementById("mainModeMenu");
+    const lecturesSetup = document.getElementById("lecturesSetupContainer");
+    
+    if (rootMode === 'lectures') {
+        mainMenu.style.display = "none";
+        lecturesSetup.style.display = "block";
+        isComprehensiveExamMode = false;
+        checkSavedProgress();
+        showHighScore();
+    } else if (rootMode === 'main') {
+        mainMenu.style.display = "flex";
+        lecturesSetup.style.display = "none";
+        isComprehensiveExamMode = false;
+    } else if (rootMode === 'comprehensive_exam') {
+        isComprehensiveExamMode = true;
+        currentMode = 'exam';
+        startComprehensiveExamSession();
+    }
+}
+
+function startComprehensiveExamSession() {
+    let allMergedQuestions = [];
+    
+    for (let key in datasets) {
+        if (datasets.hasOwnProperty(key) && Array.isArray(datasets[key])) {
+            datasets[key].forEach(q => {
+                allMergedQuestions.push(JSON.parse(JSON.stringify(q)));
+            });
+        }
+    }
+
+    if (allMergedQuestions.length === 0) {
+        alert("لا توجد أسئلة متوفرة في قاعدة البيانات الحالية!");
+        selectRootMode('main');
+        return;
+    }
+
+    let examPool = [];
+    try { examPool = JSON.parse(localStorage.getItem("theCodingNurse_exam_pool") || "[]"); } catch (e) { examPool = []; }
+
+    if (!Array.isArray(examPool) || examPool.length < 100) {
+        examPool = [...allMergedQuestions];
+        for (let idx = examPool.length - 1; idx > 0; idx--) {
+            const randomIdx = Math.floor(Math.random() * (idx + 1));
+            [examPool[idx], examPool[randomIdx]] = [examPool[randomIdx], examPool[idx]];
+        }
+    }
+
+    quiz = examPool.slice(0, 100);
+    let remainingPool = examPool.slice(100);
+    localStorage.setItem("theCodingNurse_exam_pool", JSON.stringify(remainingPool));
+
+    quiz.forEach(q => {
+        q.combinedOptions = q.o.map((enText, idx) => ({
+            en: enText,
+            ar: q.trO && q.trO[idx] ? q.trO[idx] : ""
+        }));
+        for (let j = q.combinedOptions.length - 1; j > 0; j--) {
+            const r = Math.floor(Math.random() * (j + 1));
+            [q.combinedOptions[j], q.combinedOptions[r]] = [q.combinedOptions[r], q.combinedOptions[j]];
+        }
+    });
+
+    answers = new Array(quiz.length).fill(null);
+    i = 0; score = 0;
+    localStorage.removeItem("theCodingNurse_quiz_progress");
+
+    midNav.innerHTML = "";
+    quiz.forEach((_, idx) => {
+      const b = document.createElement("button");
+      b.textContent = idx + 1; b.className = "q-btn";
+      b.onclick = () => { i = idx; load(); };
+      midNav.appendChild(b);
+    });
+
+    startCard.style.display = "none"; 
+    quizContainer.style.display = "block";
+    startTimer();
+    load();
+}
+
+function startQuiz() {
+    let selectedBank = [];
+
+    if (currentDataset === 'all') {
+        for (let key in datasets) {
+            if (datasets.hasOwnProperty(key) && Array.isArray(datasets[key])) {
+                selectedBank = selectedBank.concat(datasets[key]);
+            }
+        }
+        selectedBank = JSON.parse(JSON.stringify(selectedBank));
+    } else {
+        selectedBank = JSON.parse(JSON.stringify(datasets[currentDataset] || []));
+    }
+
+    if(selectedBank.length === 0) {
+        alert("لا توجد أسئلة متوفرة في هذا القسم حالياً!");
+        return;
+    }
+
+    if (currentMode === 'bookmark') {
+        let flagged = getFlaggedTexts();
+        quiz = selectedBank.filter(q => flagged.includes(q.q));
+        if (quiz.length === 0) {
+            alert("❌ لا توجد أسئلة مميزة بـ 🔖 في هذا القسم!");
+            return;
+        }
+        prepareQuizData(false);
+        localStorage.removeItem("theCodingNurse_quiz_progress");
+    } else if(!isReviewMode) {
+        quiz = selectedBank;
+        let doShuffle = (currentMode !== 'sequential' && currentMode !== 'memorize');
+        prepareQuizData(doShuffle); 
+        localStorage.removeItem("theCodingNurse_quiz_progress"); 
+    }
+    answers = new Array(quiz.length).fill(null);
+    
+    midNav.innerHTML = "";
+    quiz.forEach((_, idx) => {
+      const b = document.createElement("button");
+      b.textContent = idx + 1; b.className = "q-btn";
+      b.onclick = () => { i = idx; load(); };
+      midNav.appendChild(b);
+    });
+
+    startCard.style.display = "none"; quizContainer.style.display = "block";
+    if(currentMode === 'exam') { startTimer(); } else { document.getElementById("timerBox").style.display = "none"; }
+    load();
+}
+
+function updateMidNav(){
+  let flagged = getFlaggedTexts();
+  document.querySelectorAll(".q-btn").forEach((el,idx)=>{
+    el.classList.remove("active","correct","wrong","answered-exam","flagged");
+    if(idx===i) el.classList.add("active");
+    if(quiz[idx] && flagged.includes(quiz[idx].q)) el.classList.add("flagged");
+    
+    if(quiz[idx] && quiz[idx].userPick !== undefined) {
+        if(isComprehensiveExamMode || currentMode === 'exam') { 
+            el.classList.add("answered-exam"); 
+        } else if(currentMode === 'study' || currentMode === 'sequential' || currentMode === 'bookmark' || currentMode === 'memorize') {
+            if(answers[idx]===true) el.classList.add("correct");
+            if(answers[idx]===false) el.classList.add("wrong");
+        }
+    }
+  });
+}
+
+function toggleFlag() {
+    if(quiz[i]) {
+        let flagged = getFlaggedTexts();
+        const qText = quiz[i].q;
+        if(flagged.includes(qText)) {
+            flagged = flagged.filter(t => t !== qText); quiz[i].isFlagged = false;
+        } else {
+            flagged.push(qText); quiz[i].isFlagged = true;
+        }
+        localStorage.setItem("theCodingNurse_flagged_questions", JSON.stringify(flagged));
+        document.getElementById("flagBtn").classList.toggle("active", quiz[i].isFlagged);
+        updateMidNav(); saveProgress();
+    }
+}
+
+function load(){
+  if(quiz.length === 0) return;
+  clearTimeout(autoAdvanceTimeout); forceStopSpeechEngine(); 
+  document.getElementById("translationBox").style.display = "none";
+
+  const qCard = document.getElementById("quizCard");
+  qCard.style.animation = 'none'; qCard.offsetHeight; 
+  qCard.style.animation = 'popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+  let qText = quiz[i].q;
+  if (currentMode === 'memorize' && quiz[i].kw) {
+      const safeKw = quiz[i].kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${safeKw})`, 'gi');
+      qText = qText.replace(regex, `<span class="kw-highlight">$1</span>`);
+  }
+  
+  qDiv.innerHTML = qText;
+  document.getElementById("qIndexBadge").textContent = `Q: ${i + 1} / ${quiz.length}`;
+  
+  const correctIdx = quiz[i].combinedOptions.findIndex(opt => opt.en === quiz[i].o[quiz[i].a]);
+  const transBtn = document.getElementById("translateBtn");
+  
+  if(quiz[i].trQ) {
+      transBtn.style.display = "inline-block";
+      document.getElementById("transQText").textContent = quiz[i].trQ;
+      const transOList = document.getElementById("transOList"); transOList.innerHTML = "";
+      quiz[i].combinedOptions.forEach(optObj => {
+          if(optObj.ar) { const li = document.createElement("li"); li.textContent = optObj.ar; transOList.appendChild(li); }
+      });
+  } else { transBtn.style.display = "none"; }
+  
+  let flagged = getFlaggedTexts();
+  quiz[i].isFlagged = flagged.includes(quiz[i].q);
+  document.getElementById("flagBtn").classList.toggle("active", !!quiz[i].isFlagged);
+  
+  oDiv.innerHTML=""; progress.style.width=((i+1)/quiz.length)*100+"%"; updateMidNav();
+  
+  quiz[i].combinedOptions.forEach((opObj,idx)=>{
+    const b = document.createElement("button"); b.textContent = opObj.en;
+    
+    if (currentMode === 'memorize' && quiz[i].userPick === undefined) {
+        if (idx === correctIdx) { b.classList.add("correct"); b.style.borderWidth = "3px"; } 
+        else { b.style.opacity = "0.4"; b.disabled = true; }
+    }
+    if(quiz[i].userPick !== undefined) {
+        b.disabled=true;
+        if(isComprehensiveExamMode) {
+            if(idx === quiz[i].userPick) b.classList.add("selected-exam");
+        } else if(currentMode === 'study' || currentMode === 'sequential' || currentMode === 'bookmark' || currentMode === 'memorize') {
+            if(idx===correctIdx) b.classList.add("correct");
+            else if(idx === quiz[i].userPick) b.classList.add("wrong");
+        } else { if(idx === quiz[i].userPick) b.classList.add("selected-exam"); }
+    }
+    b.onclick=()=>answer(idx,b); oDiv.appendChild(b);
+  });
+}
+
+function answer(idx,btn){
+  if(quiz[i].userPick !== undefined) return;
+  quiz[i].userPick = idx;
+  document.querySelectorAll(".options button").forEach(b=>b.disabled=true);
+  const correctIdx = quiz[i].combinedOptions.findIndex(opt => opt.en === quiz[i].o[quiz[i].a]);
+  
+  if(isComprehensiveExamMode) {
+      btn.classList.add("selected-exam"); playAudioTone('click'); triggerHaptic('click');
+      autoAdvanceTimeout = setTimeout(() => { nextQ(); }, 150);
+  } else if(currentMode === 'study' || currentMode === 'sequential' || currentMode === 'bookmark' || currentMode === 'memorize') {
+      if(idx===correctIdx){
+        btn.classList.add("correct"); answers[i]=true; score++;
+        playAudioTone('correct'); triggerHaptic('correct');
+        autoAdvanceTimeout = setTimeout(() => { nextQ(); }, 1200); 
+      }else{
+        btn.classList.add("wrong"); btn.classList.add("shake-anim"); 
+        oDiv.children[correctIdx].classList.add("correct"); answers[i]=false;
+        playAudioTone('wrong'); triggerHaptic('wrong');
+      }
+  } else { btn.classList.add("selected-exam"); playAudioTone('click'); triggerHaptic('click'); }
+  updateMidNav(); saveProgress();
+}
+
+function nextQ(){ if(i<quiz.length-1){i++;load()} else showResult(); }
+function prevQ(){ if(i>0){i--;load()} }
+
+function goToHome() {
+    clearInterval(timerInterval); forceStopSpeechEngine(); saveProgress(); 
+    quizContainer.style.display = "none"; startCard.style.display = "block";
+    isReviewMode = false;
+    
+    if(isComprehensiveExamMode) { selectRootMode('main'); } else { selectRootMode('lectures'); }
+}
+
+function saveProgress() {
+    if(isReviewMode || isComprehensiveExamMode) return; 
+    const dataToSave = { quiz: quiz, answers: answers, i: i, score: score, currentMode: currentMode, currentDataset: currentDataset };
+    localStorage.setItem("theCodingNurse_quiz_progress", JSON.stringify(dataToSave));
+}
+
+function checkSavedProgress() {
+    if(localStorage.getItem("theCodingNurse_quiz_progress") && !isComprehensiveExamMode) { document.getElementById("resumeBtn").style.display = "block"; } 
+    else { document.getElementById("resumeBtn").style.display = "none"; }
+}
+
+function showHighScore() {
+    let modeKey = isComprehensiveExamMode ? "theCodingNurse_high_score_comprehensive" : "theCodingNurse_high_score_" + currentDataset + "_" + currentMode;
+    let highScore = localStorage.getItem(modeKey);
+    const hsView = document.getElementById("highScoreView");
+    if(highScore !== null) {
+        let modeName = "";
+        if(isComprehensiveExamMode) modeName = "(الامتحان الشامل)";
+        else if(currentMode === 'sequential') modeName = "(الترتيب)";
+        else if(currentMode === 'study') modeName = "(المذاكرة)";
+        else if(currentMode === 'exam') modeName = "(الامتحان)";
+        else if(currentMode === 'bookmark') modeName = "(المميزة)";
+        else if(currentMode === 'memorize') modeName = "(البصمجة)";
+        
+        document.getElementById("highScoreVal").textContent = isComprehensiveExamMode ? highScore + "% " + modeName : highScore + "% " + modeName + " - " + getDatasetLabel(currentDataset);
+        hsView.style.display = "block";
+    } else { hsView.style.display = "none"; }
+}
+
+function resumeQuiz() {
+    const savedData = localStorage.getItem("theCodingNurse_quiz_progress");
+    if(!savedData) return;
+    const parsedData = JSON.parse(savedData);
+    quiz = parsedData.quiz; answers = parsedData.answers; i = parsedData.i; score = parsedData.score; currentMode = parsedData.currentMode; currentDataset = parsedData.currentDataset || 'place1';
+    isComprehensiveExamMode = false;
+
+    document.querySelectorAll('input[name="quizMode"]').forEach(radio => { if(radio.value === currentMode) radio.checked = true; });
+    if(document.getElementById("datasetDrawer")) document.getElementById("datasetDrawer").value = currentDataset;
+    
+    midNav.innerHTML = "";
+    quiz.forEach((_, idx) => {
+      const b = document.createElement("button"); b.textContent = idx + 1; b.className = "q-btn";
+      b.onclick = () => { i = idx; load(); }; midNav.appendChild(b);
+    });
+    startCard.style.display = "none"; quizContainer.style.display = "block";
+    if(currentMode === 'exam') { startTimer(); } else { document.getElementById("timerBox").style.display = "none"; }
+    load();
+}
+
+function showResult(){
+  clearInterval(timerInterval); forceStopSpeechEngine();
+  localStorage.removeItem("theCodingNurse_quiz_progress"); 
+  document.getElementById("timerBox").style.display = "none";
+  quizContainer.style.display="none"; resultCard.style.display="block";
+  
+  if(currentMode === 'exam' || isComprehensiveExamMode) {
+      score = 0;
+      quiz.forEach((q) => { 
+          const correctIdx = q.combinedOptions.findIndex(opt => opt.en === q.o[q.a]);
+          if(q.userPick === correctIdx) score++; 
+      });
+  }
+  const wrongCount = quiz.length - score;
+  const accuracyRatio = Math.round((score / quiz.length) * 100);
+  
+  if (!isReviewMode) {
+      let modeKey = isComprehensiveExamMode ? "theCodingNurse_high_score_comprehensive" : "theCodingNurse_high_score_" + currentDataset + "_" + currentMode;
+      let savedHighScore = parseInt(localStorage.getItem(modeKey)) || 0;
+      if(!isNaN(accuracyRatio) && accuracyRatio > savedHighScore) { localStorage.setItem(modeKey, accuracyRatio); }
+  }
+  
+  document.getElementById("statCorrect").textContent = score;
+  document.getElementById("statWrong").textContent = wrongCount;
+  document.getElementById("statRatio").textContent = isNaN(accuracyRatio) ? "0%" : accuracyRatio + "%";
+  scoreText.textContent=`${score} / ${quiz.length}`;
+  
+  const bTitle = document.getElementById("badgeTitle");
+  if(accuracyRatio >= 95) bTitle.textContent = "👑 Master of Maternal & Newborn Nursing";
+  else if(accuracyRatio >= 80) bTitle.textContent = "🩺 Nursing Hero";
+  else if(accuracyRatio >= 50) bTitle.textContent = "💡 Smart Nurse";
+  else bTitle.textContent = "💪 Keep Fighting, Future Nurse";
+  
+  document.getElementById("reviewBtn").style.display = wrongCount > 0 ? "inline-block" : "none";
+  if(score >= (quiz.length / 2) && quiz.length > 0) {
+    var duration = 3 * 1000; var end = Date.now() + duration;
+    (function frame() {
+      confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0, y: 0.7 } });
+      confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1, y: 0.7 } });
+      if (Date.now() < end) { requestAnimationFrame(frame); }
+    }());
+  }
+}
+
+function startReview() {
+    let wrongQuestions = quiz.filter(q => {
+        const correctIdx = q.combinedOptions.findIndex(opt => opt.en === q.o[q.a]);
+        return q.userPick !== correctIdx;
+    });
+    if(wrongQuestions.length === 0) return;
+    quiz = JSON.parse(JSON.stringify(wrongQuestions));
+    quiz.forEach(q => { delete q.userPick; delete q.isFlagged; }); 
+    isReviewMode = true; i = 0; score = 0; currentMode = 'study';
+    prepareQuizData(false); resultCard.style.display = "none"; startQuiz();
+}
+
+function downloadResultCard() {
+    const dBtn = document.getElementById("downloadBtn");
+    const containerActionButtons = document.querySelector(".result-actions-container");
+    dBtn.textContent = "⏳ Generating Image..."; dBtn.disabled = true;
+    containerActionButtons.style.display = "none"; 
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const bgColor = currentTheme === 'dark' ? '#0f172a' : '#f1f5f9';
+    
+    html2canvas(document.querySelector(".container"), {
+        backgroundColor: bgColor, scale: 2, useCORS: true, allowTaint: true,
+        onclone: (clonedDoc) => { clonedDoc.documentElement.setAttribute('data-theme', currentTheme); }
+    }).then(canvas => {
+        const downloadLink = document.createElement("a"); downloadLink.download = `TheCodingNurse_Score.png`;
+        downloadLink.href = canvas.toDataURL("image/png"); downloadLink.click();
+        containerActionButtons.style.display = "flex"; dBtn.textContent = "📸 تحميل النتيجة كصورة"; dBtn.disabled = false;
+    }).catch(err => {
+        containerActionButtons.style.display = "flex"; dBtn.textContent = "📸 تحميل النتيجة كصورة"; dBtn.disabled = false;
+    });
+}
+
+function restartQuiz(){
+  i=0; score=0; isReviewMode = false; clearInterval(timerInterval); forceStopSpeechEngine();
+  localStorage.removeItem("theCodingNurse_quiz_progress");
+  document.getElementById("resumeBtn").style.display = "none";
+  resultCard.style.display="none"; startCard.style.display="block";
+  selectRootMode('main');
+}
+
+window.onload = function() { 
+    const drawer = document.getElementById("datasetDrawer");
+    if(drawer) { currentDataset = drawer.value || 'place1'; }
+    selectRootMode('main'); 
+};
+</script>
+</body>
+</html>
