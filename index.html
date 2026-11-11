@@ -1755,7 +1755,7 @@ const datasets = {
         ]
     },
     {
-        q: "When should edema be assessed routinely during prenatal visits according to the checklist?",
+        q: "When should edema be assessed routinely during prenatal visits?",
         o: [
             "At each prenatal visit after 20 weeks' gestation",
             "Only during the first visit in week 4",
@@ -1763,7 +1763,7 @@ const datasets = {
             "Once every trimester randomly"
         ],
         a: 0,
-        trQ: "متى يجب تقييم الوذمة بانتظام أثناء زيارات ما قبل الولادة وفقاً لقائمة التحقق؟",
+        trQ: "متى يجب تقييم الوذمة بانتظام أثناء زيارات ما قبل الولادة؟",
         trO: [
             "في كل زيارة قبل الولادة بعد الأسبوع العشرين من الحمل",
             "فقط خلال الزيارة الأولى في الأسبوع الرابع",
@@ -1789,20 +1789,20 @@ const datasets = {
         ]
     },
     {
-        q: "Which of the following sites is checked during the physical examination steps for pitting edema?",
+        q: "Which of the following specific anatomical sites is checked during pitting edema physical exam?",
         o: [
-            "Over the dorsum of the foot",
-            "On the forehead",
-            "At the tip of the nose",
-            "Behind the ear lobe"
+            "Behind the medial malleolus",
+            "On the tip of the shoulder",
+            "Over the patella bone",
+            "At the center of the forehead"
         ],
         a: 0,
-        trQ: "أي من المواقع التالية يتم فحصها أثناء خطوات الفحص الجسدي للوذمة الانطباعية؟",
+        trQ: "أي من المواقع التشريحية المحددة التالية يتم فحصها أثناء الفحص الجسدي للوذمة الانطباعية؟",
         trO: [
-            "فوق ظهر القدم (Dorsum of the foot)",
-            "على الجبهة",
-            "في طرف الأنف",
-            "خلف شحمة الأذن"
+            "خلف الكعب الإنسي (Behind the medial malleolus)",
+            "على طرف الكتف",
+            "فوق عظمة الركبة",
+            "في منتصف الجبهة"
         ]
     },
     {
@@ -1874,6 +1874,59 @@ const datasets = {
         ]
     },
     {
+        q: "What is the specific indentation characteristic of 1+ edema regarding visual distortion?",
+        o: [
+            "No visual distortion and disappears rapidly",
+            "Deep visual distortion lasting 5 minutes",
+            "Permanent structural destruction",
+            "Severe skin discoloration"
+        ],
+        a: 0,
+        trQ: "ما هي خصائص انطباع الوذمة +1 فيما يتعلق بالتشوه البصري؟",
+        trO: [
+            "لا يوجد تشوه بصري ويختفي بسرعة (No visual distortion & disappears rapidly)",
+            "تشوه بصري عميق يستمر لمدة 5 دقائق",
+            "دمار هيكلي دائم",
+            "تغير لون الجلد بشدة"
+        ]
+    },
+    {
+        q: "Which specific landmark area on the foot is mentioned for pressing during pitting edema assessment?",
+        o: [
+            "Over the dorsum of the foot",
+            "On the sole arch",
+            "Between the smallest toes",
+            "Directly on the toenail bed"
+        ],
+        a: 0,
+        trQ: "أي منطقة تشريحية محددة على القدم تم ذكرها للضغط أثناء تقييم الوذمة الانطباعية؟",
+        trO: [
+            "فوق ظهر القدم (Over the dorsum of the foot)",
+            "على قوس باطن القدم",
+            "بين أصابع القدم الصغرى",
+            "مباشرة على سرير أظافر القدم"
+        ]
+    },
+    {
+        q: "In 2+ pitting edema, how is the pitting depth and appearance described in the scoring system?",
+        o: [
+            "2-4 mm indentation, somewhat deeper pitting, no readably detectable distortion",
+            "6-8 mm indentation with severe gross distortion",
+            "<= 2 mm indentation lasting 10 minutes",
+            "No indentation at all with skin rebounding instantly"
+        ],
+        a: 0,
+        trQ: "في الوذمة +2، كيف يتم وصف عمق الانطباع والمظهر في نظام التقييم؟",
+        trO: [
+            "انطباع 2-4 مم، انطباع أعمق قليلاً، ولا يوجد تشوه يمكن ملاحظته بسهولة",
+            "انطباع 6-8 مم مع تشوه إجمالي شديد",
+            "انطباع 2 مم أو أقل يستمر لمدة 10 دقائق",
+            "لا يوجد انطباع على الإطلاق مع ارتداد الجلد فوراً"
+        ]
+    },
+
+    // --- (10 True/False) أسئلة الصح والخطأ ---
+    {
         q: "Pitting edema causes indentations to a swollen area of the skin after pressure is released.",
         o: ["True", "False"],
         a: 0,
@@ -1888,7 +1941,7 @@ const datasets = {
         trO: ["صحيح", "خطأ"]
     },
     {
-        q: "Edeme assessment should be done routinely at each prenatal visit after 20 weeks' gestation.",
+        q: "Edema assessment should be done routinely at each prenatal visit after 20 weeks' gestation.",
         o: ["True", "False"],
         a: 0,
         trQ: "يجب تقييم الوذمة بانتظام في كل زيارة قبل الولادة بعد الأسبوع العشرين من الحمل.",
@@ -1916,31 +1969,31 @@ const datasets = {
         trO: ["صحيح", "خطأ"]
     },
     {
-        q: "Checking behind the medial malleolus is one of the correct steps when assessing pitting edema.",
+        q: "Checking behind the medial malleolus is one of the correct anatomical steps when assessing pitting edema.",
         o: ["True", "False"],
         a: 0,
-        trQ: "فحص خلف الكعب الإنسي (Medial malleolus) يعتبر إحدى الخطوات الصحيحة عند تقييم الوذمة الانطباعية.",
+        trQ: "فحص خلف الكعب الإنسي (Medial malleolus) يعتبر إحدى الخطوات التشريحية الصحيحة عند تقييم الوذمة الانطباعية.",
         trO: ["صحيح", "خطأ"]
     },
     {
-        q: "Heart valve problems and deep venous thrombosis are indications for pitting edema assessment.",
+        q: "Heart valve problems, liver disease, and deep venous thrombosis are clinical indications for pitting edema assessment.",
         o: ["True", "False"],
         a: 0,
-        trQ: "مشاكل صمامات القلب وجلَطات الأوردة العميقة تعتبر من دواعي تقييم الوذمة الانطباعية.",
+        trQ: "مشاكل صمامات القلب، أمراض الكبد، وجلَطات الأوردة العميقة تعتبر دواعي سريرية لتقييم الوذمة الانطباعية.",
         trO: ["صحيح", "خطأ"]
     },
     {
-        q: "Pressing firmly with the thumb for at least 2 seconds is a required action during edema steps.",
+        q: "A 3+ pitting edema has an indentation depth of 4-6 mm and may last for more than one minute.",
         o: ["True", "False"],
         a: 0,
-        trQ: "الضغط بقوة بالإبهام لمدة ثانية واحدة على الأقل هو إجراء مطلوب أثناء خطوات الوذمة.",
+        trQ: "الوذمة الانطباعية +3 لها عمق انطباع من 4-6 مم وقد تستمر لأكثر من دقيقة واحدة.",
         trO: ["صحيح", "خطأ"]
     },
     {
-        q: "Comparing current findings with those previously recorded is a part of post-procedure tasks.",
+        q: "Non-pitting edema may be found in the patient's fingers, face, and eyelids.",
         o: ["True", "False"],
         a: 0,
-        trQ: "مقارنة النتائج الحالية بتلك المسجلة سابقاً يعتبر جزءاً من مهام ما بعد الإجراء.",
+        trQ: "يمكن العثور على الوذمة غير الانطباعية في أصابع المريض، وجهه، وجفونه.",
         trO: ["صحيح", "خطأ"]
     }  
   ],
