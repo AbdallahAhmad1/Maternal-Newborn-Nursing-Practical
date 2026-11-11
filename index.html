@@ -1388,11 +1388,21 @@ const datasets = {
         trO: ["كل 5 دقائق", "كل 15 دقيقة", "كل 30 دقيقة", "كل 60 دقيقة"]
     },
     {
-        q: "What is the normal baseline range of Fetal Heart Rate (FHR)?",
-        o: ["80 to 100 beats/minute", "120 to 160 beats/minute", "170 to 200 beats/minute", "60 to 100 beats/minute"],
-        a: 1,
-        trQ: "ما هو المعدل الطبيعي الأساسي لنبض قلب الجنين (FHR)؟",
-        trO: ["من 80 إلى 100 نبضة / دقيقة", "من 120 إلى 160 نبضة / دقيقة", "من 170 إلى 200 نبضة / دقيقة", "من 60 إلى 100 نبضة / دقيقة"]
+        q: "Which of the following is considered a non-reassuring sign of fetal heart rate?",
+        o: [
+            "Gradual or abrupt decrease in rate.",
+            "An average rate of 120 to 160 beats/minute.",
+            "Regular rhythm.",
+            "Acceleration from the baseline rate."
+        ],
+        a: 0,
+        trQ: "أي مما يلي يعتبر علامة غير مطمئنة لنبض قلب الجنين؟",
+        trO: [
+            "الانخفاض التدريجي أو المفاجئ في المعدل.",
+            "معدل متوسط من 120 إلى 160 نبضة في الدقيقة.",
+            "إيقاع منتظم.",
+            "التسارع من المعدل الأساسي."
+        ]
     },
     {
         q: "Before starting the auscultation procedure, what should the nurse ask the woman to do?",
@@ -1416,11 +1426,21 @@ const datasets = {
         trO: ["للحفاظ على ميل جانبي طفيف", "لرفع ساقيها", "لزيادة ضغط الدم", "لتسريع انقباضات المخاض"]
     },
     {
-        q: "How long should the nurse listen to the fetal heart to count beats accurately against the second hand of a clock?",
-        o: ["10 seconds", "30 seconds", "A full minute", "5 minutes"],
-        a: 2,
-        trQ: "كم المدة التي يجب أن تستمع فيها الممرضة لنبض قلب الجنين لعد النبضات بدقة مقابل عقرب الثواني؟",
-        trO: ["10 ثوانٍ", "30 ثانية", "دقيقة كاملة", "5 دقائق"]
+        q: "What does a proper position facilitate during fetal heart auscultation according to the notes?",
+        o: [
+            "Proper position facilitates location of fetal heart tones.",
+            "It increases maternal blood pressure significantly.",
+            "It accelerates the second stage of labor.",
+            "It prevents uterine contractions entirely."
+        ],
+        a: 0,
+        trQ: "ما الذي يسهله الوضع الصحيح أثناء قياس نبض قلب الجنين وفقاً للملاحظات؟",
+        trO: [
+            "الوضع الصحيح يسهل تحديد مكان أصوات نبض قلب الجنين.",
+            "يزيد من ضغط دم الأم بشكل ملحوظ.",
+            "يسرع المرحلة الثانية من المخاض.",
+            "يمنع انقباضات الرحم تماماً."
+        ]
     },
     {
         q: "When listening to the fetal heart using a fetoscope, what should the nurse do with one hand?",
@@ -1492,6 +1512,8 @@ const datasets = {
         trQ: "خلال الزيارات الدورية لرعاية ما قبل الولادة (Antenatal)، كم مرة ينبغي قياس نبض الجنين؟",
         trO: ["في الثلث الأخير من الحمل فقط", "في كل زيارة (Each visit)", "مرة كل شهرين", "فقط في حالة حدوث مضاعفات"]
     },
+
+    // --- (10 True/False) أسئلة الصح والخطأ ---
     {
         q: "Proper position of the pregnant woman facilitates locating fetal heart tones.",
         o: ["True", "False"],
